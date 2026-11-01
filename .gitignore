@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.auto-cache/**/*.lock
+.auto-cache/**/*.tmp

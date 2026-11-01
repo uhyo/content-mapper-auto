@@ -1,0 +1,7 @@
+Export a function `formatRelativeTime(date: Date, now?: Date): string` that
+describes how long ago `date` was compared to `now` (default: the current time)
+in English, using `Intl.RelativeTimeFormat` with `numeric: "auto"`.
+
+Less than 45 seconds is "just now". Otherwise pick the largest fitting unit among
+minutes, hours, days, weeks, months and years, e.g. "5 minutes ago", "yesterday",
+"last week". Dates in the future work too ("in 3 hours").
