@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc -p tsconfig.json --runExternalCode",
+    "build": "tsc -p tsconfig.json --runExternalCode && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "content-mapper-auto": "*",
+    "typescript": "7.1.0-beta",
+    "vite": "^8.0.0"
+  }
+}

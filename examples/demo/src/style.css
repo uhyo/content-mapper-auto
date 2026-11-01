@@ -1,0 +1,14 @@
+:root { font-family: system-ui, sans-serif; color: #1f2328; background: #f6f8fa; }
+main { max-width: 34rem; margin: 3rem auto; padding: 1.5rem; background: #fff; border-radius: 12px; box-shadow: 0 1px 3px #0002; }
+h1 small { font-size: 0.5em; color: #8b949e; font-weight: normal; }
+form { display: flex; gap: 0.5rem; }
+input[name="title"] { flex: 1; padding: 0.5rem; font: inherit; }
+button { font: inherit; cursor: pointer; }
+.error { color: #cf222e; }
+ul { list-style: none; padding: 0; }
+li { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px solid #eaeef2; }
+li .title { flex: 1; }
+li.done .title { text-decoration: line-through; color: #8b949e; }
+li time { font-size: 0.8em; color: #8b949e; }
+li .remove { border: none; background: none; color: #8b949e; font-size: 1.2em; }
+footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }

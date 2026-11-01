@@ -1,0 +1,16 @@
+{
+  "name": "content-mapper-auto-monorepo",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w content-mapper-auto",
+    "test": "npm run build && npm test -w content-mapper-auto",
+    "demo:dev": "npm run build && npm run dev -w demo",
+    "demo:build": "npm run build && npm run build -w demo",
+    "demo:typecheck": "npm run build && npm run typecheck -w demo"
+  }
+}

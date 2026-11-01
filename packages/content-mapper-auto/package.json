@@ -1,0 +1,50 @@
+{
+  "name": "content-mapper-auto",
+  "version": "0.1.0",
+  "description": "A TypeScript 7.1 content mapper and Vite plugin that turn plain-language .auto files into TypeScript modules using the Claude CLI.",
+  "license": "MIT",
+  "author": "uhyo",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "default": "./dist/core/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite/index.d.ts",
+      "default": "./dist/vite/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typescript": {
+    "contentMapper": {
+      "exec": [
+        "node",
+        "./dist/mapper/main.js"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --test-concurrency=1 \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "peerDependencies": {
+    "vite": "^7.0.0 || ^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "7.1.0-beta",
+    "vite": "^8.0.0"
+  }
+}

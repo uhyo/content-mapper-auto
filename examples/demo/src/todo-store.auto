@@ -1,0 +1,16 @@
+Export a class `TodoStore` that keeps an in-memory list of `Todo` items
+(the `Todo` interface is exported from "./types.ts"; import it from "./types").
+
+- The constructor optionally takes initial todos.
+- `add(title: string): Todo` trims the title, throws a `RangeError` if it is empty,
+  and appends a new todo with an id from `crypto.randomUUID()`, `done: false`
+  and `createdAt` set to now. It returns the new todo.
+- `toggle(id: string): void` flips `done` of the matching todo.
+- `remove(id: string): void` removes it.
+- `clearCompleted(): number` removes all done todos and returns how many were removed.
+- `get todos(): readonly Todo[]` returns the todos, newest first.
+- `get remaining(): number` is the number of todos that are not done.
+- `subscribe(listener: (todos: readonly Todo[]) => void): () => void` registers a
+  listener that is called after every change, and returns an unsubscribe function.
+
+Never mutate todo objects in place; replace them, so listeners can compare by identity.

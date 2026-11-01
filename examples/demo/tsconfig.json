@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": ["es2023", "dom", "dom.iterable"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"]
+  },
+  // Every .auto file in the program is turned into TypeScript by content-mapper-auto.
+  // `tsc` needs --runExternalCode to run content mappers.
+  "contentMappers": [
+    {
+      "package": "content-mapper-auto",
+      "extensions": [".auto"],
+      "options": {
+        "instructions": "Target modern browsers. Do not touch the DOM unless the description asks for it."
+      }
+    }
+  ],
+  "include": ["src"]
+}
